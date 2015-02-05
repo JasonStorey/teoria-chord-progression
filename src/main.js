@@ -1,5 +1,5 @@
 var ChordProgression = require('./chord-progression');
 
-module.exports = function() {
-    return new ChordProgression();
+module.exports = function(scale, progression) {
+    return new ChordProgression(scale, progression);
 };
