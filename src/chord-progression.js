@@ -7,7 +7,7 @@ function ChordProgression(scale, progression) {
         throw new Error('Invalid argument: TeoriaScale');
     }
 
-    if(!(progression instanceof Array)) {
+    if(!(progression instanceof Array) || progression.filter(function(n) { return typeof n !== 'number'; }).length > 0) {
         throw new Error('Invalid argument: Integer Array');
     }
     // Does nothing... yet.

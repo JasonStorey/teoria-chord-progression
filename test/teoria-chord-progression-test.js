@@ -17,5 +17,10 @@ describe('Teoria Chord Progression', function() {
             var scale = teoria.scale('c', 'major');
             assert.throws(function() { progression(scale, 'not an array'); }, /Invalid argument: Integer Array/);
         });
+
+        it('throws an error if Array contains NaNs', function() {
+            var scale = teoria.scale('c', 'major');
+            assert.throws(function() { progression(scale, [1, 2, 'egg']); }, /Invalid argument: Integer Array/);
+        });
     });
 });
