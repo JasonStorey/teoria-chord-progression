@@ -1,0 +1,4 @@
+--reporter spec
+--growl
+--colors
+./test/**/*-test.js

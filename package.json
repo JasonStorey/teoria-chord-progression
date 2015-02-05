@@ -1,0 +1,21 @@
+{
+  "name": "teoria-chord-progression",
+  "version": "0.1.0",
+  "description": "Chord progression abstractions for Teoria.js - https://github.com/saebekassebil/teoria - the JS lib for music theory.",
+  "main": "./dist/teoria-chord-progression.js",
+  "scripts": {
+    "clean": "mkdir -p ./dist && rm -rf ./dist/*",
+    "build": "npm run clean && browserify ./src/main.js --standalone progression -o ./dist/teoria-chord-progression.js",
+    "test": "npm run build && mocha"
+  },
+  "author": {
+    "name": "Jason A. Storey",
+    "url": "https://github.com/JasonStorey"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "mocha": "^2.1.0",
+    "teoria": "^1.3.0"
+  }
+}
