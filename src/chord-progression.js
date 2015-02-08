@@ -1,6 +1,6 @@
-function ChordProgression(scale, progression) {
-    var notes;
+var piu = require('piu');
 
+function ChordProgression(scale, progression) {
     if(!scale || !progression) {
         throw new Error('Expected 2 arguments but received 0.');
     }
@@ -13,15 +13,30 @@ function ChordProgression(scale, progression) {
         throw new Error('Invalid argument: Integer Array.');
     }
 
-    notes = scale.notes();
-
-    progression.forEach(function(n) {
-        var degree = notes[n - 1];
-
-        if(!degree) {
-            throw new Error('Invalid Progression: Scale has ' + notes.length + ' degrees.');
-        }
-    });
+    this.notes = scale.notes();
+    this.chords = progression.map(function(n) {
+        return this._getChord(n - 1);
+    }.bind(this));
 }
+
+ChordProgression.prototype._getChord = function _getChord(n) {
+    var rootNote = this.notes[n],
+        chordNotes = [],
+        chordLength = 3,
+        chordName,
+        i;
+
+    if(!rootNote) {
+        throw new Error('Invalid Progression: Scale has ' + this.notes.length + ' degrees.');
+    }
+
+    for(i = 0; i < chordLength; i++) {
+        chordNotes.push(this.notes[(n + (2 * i)) % this.notes.length]);
+    }
+
+    chordName = piu.infer(chordNotes)[0].type;
+
+    return rootNote.chord(chordName);
+};
 
 module.exports = ChordProgression;
