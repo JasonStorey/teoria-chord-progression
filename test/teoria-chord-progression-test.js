@@ -51,13 +51,13 @@ describe('Teoria Chord Progression', function() {
                 AMinor = teoria.chord('Am', 3),
                 BDiminished = teoria.chord('Bdim', 3);
 
-            assert.deepEqual(progression.chords[0], C);
-            assert.deepEqual(progression.chords[1], DMinor);
-            assert.deepEqual(progression.chords[2], EMinor);
-            assert.deepEqual(progression.chords[3], F);
-            assert.deepEqual(progression.chords[4], G);
-            assert.deepEqual(progression.chords[5], AMinor);
-            assert.deepEqual(progression.chords[6], BDiminished);
+            assert.deepEqual(progression.getChord(0), C);
+            assert.deepEqual(progression.getChord(1), DMinor);
+            assert.deepEqual(progression.getChord(2), EMinor);
+            assert.deepEqual(progression.getChord(3), F);
+            assert.deepEqual(progression.getChord(4), G);
+            assert.deepEqual(progression.getChord(5), AMinor);
+            assert.deepEqual(progression.getChord(6), BDiminished);
         });
 
         it('F# Major', function() {
@@ -70,13 +70,13 @@ describe('Teoria Chord Progression', function() {
                 DSharpMinor = teoria.chord('D#m', 4),
                 ESharpDiminished = teoria.chord('E#dim', 4);
 
-            assert.deepEqual(progression.chords[0], FSharpChord);
-            assert.deepEqual(progression.chords[1], GSharpMinor);
-            assert.deepEqual(progression.chords[2], ASharpMinor);
-            assert.deepEqual(progression.chords[3], B);
-            assert.deepEqual(progression.chords[4], CSharp);
-            assert.deepEqual(progression.chords[5], DSharpMinor);
-            assert.deepEqual(progression.chords[6], ESharpDiminished);
+            assert.deepEqual(progression.getChord(0), FSharpChord);
+            assert.deepEqual(progression.getChord(1), GSharpMinor);
+            assert.deepEqual(progression.getChord(2), ASharpMinor);
+            assert.deepEqual(progression.getChord(3), B);
+            assert.deepEqual(progression.getChord(4), CSharp);
+            assert.deepEqual(progression.getChord(5), DSharpMinor);
+            assert.deepEqual(progression.getChord(6), ESharpDiminished);
         });
     });
 });

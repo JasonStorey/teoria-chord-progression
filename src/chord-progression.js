@@ -15,11 +15,11 @@ function ChordProgression(scale, progression) {
 
     this.notes = scale.notes();
     this.chords = progression.map(function(n) {
-        return this._getChord(n - 1);
+        return this._parseChord(n - 1);
     }.bind(this));
 }
 
-ChordProgression.prototype._getChord = function _getChord(n) {
+ChordProgression.prototype._parseChord = function _parseChord(n) {
     var rootNote = this.notes[n],
         chordNotes = [],
         chordLength = 3,
@@ -37,6 +37,14 @@ ChordProgression.prototype._getChord = function _getChord(n) {
     chordName = piu.infer(chordNotes)[0].type;
 
     return rootNote.chord(chordName);
+};
+
+ChordProgression.prototype.getChords = function getChords() {
+    return this.chords;
+};
+
+ChordProgression.prototype.getChord = function getChord(n) {
+    return this.chords[n];
 };
 
 module.exports = ChordProgression;
