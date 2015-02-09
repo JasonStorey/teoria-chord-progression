@@ -47,4 +47,12 @@ ChordProgression.prototype.getChord = function getChord(n) {
     return this.chords[n];
 };
 
+ChordProgression.prototype.simple = function simple() {
+    return this.chords.map(function(chord) {
+        return chord.notes().map(function(note) {
+            return note.toString();
+        });
+    });
+};
+
 module.exports = ChordProgression;

@@ -30,7 +30,7 @@ describe('Teoria Chord Progression', function() {
         });
     });
 
-    describe('Parses chords correctly', function() {
+    describe('parses chords correctly', function() {
         var cMajScale,
             fSharpMajScale,
             chords;
@@ -77,6 +77,13 @@ describe('Teoria Chord Progression', function() {
             assert.deepEqual(progression.getChord(4), CSharp);
             assert.deepEqual(progression.getChord(5), DSharpMinor);
             assert.deepEqual(progression.getChord(6), ESharpDiminished);
+        });
+    });
+
+    describe('.simple() method', function() {
+        it('returns an array of note arrays containing .toString() value', function() {
+            var progession = createProgression(teoria.scale('G3', 'major'), [2, 5, 1]);
+            assert.deepEqual(progession.simple(), [['a3', 'c4', 'e4'], ['d4', 'f#4', 'a4'], ['g3', 'b3', 'd4']]);
         });
     });
 });
