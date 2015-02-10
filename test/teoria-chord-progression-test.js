@@ -28,6 +28,11 @@ describe('Teoria Chord Progression', function() {
                 degrees = scale.notes().length;
             assert.throws(function() { createProgression(scale, [1, 2, degrees + 1]); }, /Invalid Progression: Scale has 7 degrees./);
         });
+
+        it('throws an error if Chord Length is unsupported', function() {
+            var scale = teoria.scale('c', 'major');
+            assert.throws(function() { createProgression(scale, [1, 2, 3], 5); }, /Invalid argument: Supported chord lengths are 3 and 4./);
+        });
     });
 
     describe('parses chords correctly', function() {
@@ -41,7 +46,7 @@ describe('Teoria Chord Progression', function() {
             chords = [1,2,3,4,5,6,7];
         });
 
-        it('C Major', function() {
+        it('C Major triads', function() {
             var progression = createProgression(cMajScale, chords),
                 C = teoria.chord('C', 3),
                 DMinor = teoria.chord('Dm', 3),
@@ -60,7 +65,7 @@ describe('Teoria Chord Progression', function() {
             assert.deepEqual(progression.getChord(6), BDiminished);
         });
 
-        it('F# Major', function() {
+        it('F# Major triads', function() {
             var progression = createProgression(fSharpMajScale, chords),
                 FSharpChord = teoria.chord('F#', 3),
                 GSharpMinor = teoria.chord('G#m', 3),
@@ -77,6 +82,44 @@ describe('Teoria Chord Progression', function() {
             assert.deepEqual(progression.getChord(4), CSharp);
             assert.deepEqual(progression.getChord(5), DSharpMinor);
             assert.deepEqual(progression.getChord(6), ESharpDiminished);
+        });
+
+        it('C Major 7th chords', function() {
+            var progression = createProgression(cMajScale, chords, 4),
+                CMaj7 = teoria.chord('Cmaj7', 3),
+                Dmin7 = teoria.chord('Dm7', 3),
+                Emin7 = teoria.chord('Em7', 3),
+                FMaj7 = teoria.chord('Fmaj7', 3),
+                G7 = teoria.chord('G7', 3),
+                Amin7 = teoria.chord('Am7', 3),
+                Bmin7b5 = teoria.chord('Bm7b5', 3);
+
+            assert.deepEqual(progression.getChord(0), CMaj7);
+            assert.deepEqual(progression.getChord(1), Dmin7);
+            assert.deepEqual(progression.getChord(2), Emin7);
+            assert.deepEqual(progression.getChord(3), FMaj7);
+            assert.deepEqual(progression.getChord(4), G7);
+            assert.deepEqual(progression.getChord(5), Amin7);
+            assert.deepEqual(progression.getChord(6), Bmin7b5);
+        });
+
+        it('F# Major 7th chords', function() {
+            var progression = createProgression(fSharpMajScale, chords, 4),
+                FSharpMaj7 = teoria.chord('F#maj7', 3),
+                GSharpMin7 = teoria.chord('G#m7', 3),
+                ASharpMin7 = teoria.chord('A#m7', 3),
+                BMaj7 = teoria.chord('Bmaj7', 3),
+                CSharp7 = teoria.chord('C#7', 4),
+                DSharpMin7 = teoria.chord('D#m7', 4),
+                ESharpMin7b5 = teoria.chord('E#m7b5', 4);
+
+            assert.deepEqual(progression.getChord(0), FSharpMaj7);
+            assert.deepEqual(progression.getChord(1), GSharpMin7);
+            assert.deepEqual(progression.getChord(2), ASharpMin7);
+            assert.deepEqual(progression.getChord(3), BMaj7);
+            assert.deepEqual(progression.getChord(4), CSharp7);
+            assert.deepEqual(progression.getChord(5), DSharpMin7);
+            assert.deepEqual(progression.getChord(6), ESharpMin7b5);
         });
     });
 
