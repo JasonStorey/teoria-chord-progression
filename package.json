@@ -5,7 +5,7 @@
   "main": "./dist/teoria-chord-progression.js",
   "scripts": {
     "clean": "mkdir -p ./dist && rm -rf ./dist/*",
-    "build": "npm run clean && browserify ./src/main.js --standalone progression -o ./dist/teoria-chord-progression.js",
+    "build": "npm run clean && browserify ./index.js --standalone progression -o ./dist/teoria-chord-progression.js",
     "test": "npm run build && mocha"
   },
   "author": {
