@@ -5,8 +5,9 @@
   "main": "./index.js",
   "scripts": {
     "clean": "mkdir -p ./dist && rm -rf ./dist/*",
-    "build": "npm run clean && browserify ./index.js --standalone progression -o ./dist/teoria-chord-progression.js",
-    "test": "npm run build && mocha"
+    "build": "npm run clean && browserify ./index.js --standalone progression -o ./dist/teoria-chord-progression.js && npm run minify",
+    "test": "mocha",
+    "minify": "uglifyjs ./dist/teoria-chord-progression.js > ./dist/teoria-chord-progression.min.js"
   },
   "author": {
     "name": "Jason A. Storey",
@@ -16,7 +17,8 @@
   "devDependencies": {
     "browserify": "^8.1.3",
     "mocha": "^2.1.0",
-    "teoria": "^1.3.0"
+    "teoria": "^1.3.0",
+    "uglify-js": "^2.4.16"
   },
   "dependencies": {
     "piu": "^1.0.0"
