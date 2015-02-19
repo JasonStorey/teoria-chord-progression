@@ -2,7 +2,7 @@
   "name": "teoria-chord-progression",
   "version": "0.1.0",
   "description": "Create chord progressions for use with Teoria.js - https://github.com/saebekassebil/teoria - the JS lib for music theory.",
-  "main": "./dist/teoria-chord-progression.js",
+  "main": "./index.js",
   "scripts": {
     "clean": "mkdir -p ./dist && rm -rf ./dist/*",
     "build": "npm run clean && browserify ./index.js --standalone progression -o ./dist/teoria-chord-progression.js",

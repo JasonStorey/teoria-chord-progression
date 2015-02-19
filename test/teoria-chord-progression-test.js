@@ -1,8 +1,7 @@
 describe('Teoria Chord Progression', function() {
-    var DIST = process.cwd() + '/dist',
-        assert = require('assert'),
+    var assert = require('assert'),
         teoria = require('teoria'),
-        createProgression = require(DIST + '/teoria-chord-progression');
+        createProgression = require('../.');
 
     describe('with invalid arguments', function() {
         it('throws an error if correct number of args aren\'t provided', function() {
