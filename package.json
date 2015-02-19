@@ -22,5 +22,15 @@
   },
   "dependencies": {
     "piu": "^1.0.0"
-  }
+  },
+  "keywords": [
+    "music",
+    "teoria",
+    "theory",
+    "chords",
+    "harmony",
+    "scales",
+    "diatonic",
+    "scales"
+  ]
 }
