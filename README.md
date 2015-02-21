@@ -1,6 +1,6 @@
 teoria-chord-progression
 ========================
-Diatonic chord progressions for with [Teoria.js](https://github.com/saebekassebil/teoria) - the JS lib for music theory.
+Diatonic chord progressions for [Teoria.js](https://github.com/saebekassebil/teoria) - the JS lib for music theory.
 
 _Teoria.js is a lightweight and fast JavaScript library
 for music theory, both Jazz and Classical. It aims at providing an intuitive

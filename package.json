@@ -1,6 +1,6 @@
 {
   "name": "teoria-chord-progression",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Diatonic chord progressions for Teoria.js",
   "main": "./index.js",
   "scripts": {
