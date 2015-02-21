@@ -1,6 +1,6 @@
 teoria-chord-progression
 ========================
-Create chord progressions for use with [Teoria.js](https://github.com/saebekassebil/teoria) - the JS lib for music theory.
+Diatonic chord progressions for with [Teoria.js](https://github.com/saebekassebil/teoria) - the JS lib for music theory.
 
 _Teoria.js is a lightweight and fast JavaScript library
 for music theory, both Jazz and Classical. It aims at providing an intuitive
@@ -19,6 +19,8 @@ via npm:
 ``` bash
 npm install teoria-chord-progression
 ```
+
+Browser compatible build available in `./dist`
 
 Usage
 ------
@@ -71,6 +73,3 @@ Run the tests:
 ```bash
 npm test
 ```
-
-Browser compatible build available in `./dist`
-
