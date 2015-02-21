@@ -1,7 +1,7 @@
 {
   "name": "teoria-chord-progression",
   "version": "0.1.0",
-  "description": "Create chord progressions for use with Teoria.js - https://github.com/saebekassebil/teoria - the JS lib for music theory.",
+  "description": "Diatonic chord progressions for Teoria.js",
   "main": "./index.js",
   "scripts": {
     "clean": "mkdir -p ./dist && rm -rf ./dist/*",
@@ -9,11 +9,19 @@
     "test": "mocha",
     "minify": "uglifyjs ./dist/teoria-chord-progression.js > ./dist/teoria-chord-progression.min.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JasonStorey/teoria-chord-progression"
+  },
   "author": {
     "name": "Jason A. Storey",
     "url": "https://github.com/JasonStorey"
   },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JasonStorey/teoria-chord-progression/issues"
+  },
+  "homepage": "https://github.com/JasonStorey/teoria-chord-progression",
   "devDependencies": {
     "browserify": "^8.1.3",
     "mocha": "^2.1.0",
