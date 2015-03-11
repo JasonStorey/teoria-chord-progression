@@ -1,19 +1,19 @@
 teoria-chord-progression
 ========================
-Diatonic chord progressions for [Teoria.js](https://github.com/saebekassebil/teoria) - the JS lib for music theory.
+> Diatonic chord progressions for [Teoria.js](https://github.com/saebekassebil/teoria) - the JS lib for music theory.
 
 _Teoria.js is a lightweight and fast JavaScript library
 for music theory, both Jazz and Classical. It aims at providing an intuitive
 programming interface for music software (such as Sheet Readers,
 Sheet Writers, MIDI Players etc.)._
 
-Features
--------
+# Features
+
 - A chord progression object, for creating and managing groups of `teoria.chord`
 - Supports browser and Node environment
+- Lightweight (**2.6 KB minified, gzipped**)
 
-Installation
------------
+# Installation
 
 via npm:
 ``` bash
@@ -22,8 +22,7 @@ npm install teoria-chord-progression
 
 Browser compatible build available in `./dist`
 
-Usage
-------
+# Usage
 
 teoria-chord-progression depends on [Teoria.js](https://github.com/saebekassebil/teoria).
 ```javascript
@@ -50,8 +49,7 @@ twoFiveOne7thChords.simple(); // [ [ 'd3', 'f3', 'a3' ], [ 'g3', 'b3', 'd4' ], [
 
 ```
 
-Building
---------
+# Building
 
 Fetch the code:
 
@@ -73,3 +71,15 @@ Run the tests:
 ```bash
 npm test
 ```
+
+# Contributing
+
+Found a bug or missing feature? Please open an [issue](https://github.com/JasonStorey/teoria-chord-progression/issues)!
+
+Send your feedback. Send your pull requests. All contributions are greatly appreciated!
+
+# Copyright and license
+
+Created and copyright (c) 2014-2015 by Jason A. Storey
+
+teoria-chord-progression may be freely distributed under the MIT license.
