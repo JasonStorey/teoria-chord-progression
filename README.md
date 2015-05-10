@@ -22,7 +22,7 @@ npm install teoria-chord-progression
 
 Browser compatible build available in `./dist`
 
-Alternatively, download the latest release from GitHub.
+Alternatively, download the [latest release](https://github.com/JasonStorey/teoria-chord-progression/releases/tag/v1.0.0) from GitHub.
 
 Not using a module system?
 
