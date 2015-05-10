@@ -22,6 +22,12 @@ npm install teoria-chord-progression
 
 Browser compatible build available in `./dist`
 
+Alternatively, download the latest release from GitHub.
+
+Not using a module system?
+
+In a browser environment, the global function `teoriaChordProgression` will be added to window.
+
 # Usage
 
 teoria-chord-progression depends on [Teoria.js](https://github.com/saebekassebil/teoria).

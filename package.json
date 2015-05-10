@@ -5,7 +5,7 @@
   "main": "./index.js",
   "scripts": {
     "clean": "mkdir -p ./dist && rm -rf ./dist/*",
-    "build": "npm run clean && browserify ./index.js --standalone progression -o ./dist/teoria-chord-progression.js && npm run minify",
+    "build": "npm run clean && browserify ./index.js --standalone teoriaChordProgression -o ./dist/teoria-chord-progression.js && npm run minify",
     "test": "mocha",
     "minify": "uglifyjs ./dist/teoria-chord-progression.js > ./dist/teoria-chord-progression.min.js"
   },
